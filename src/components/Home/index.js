@@ -13,7 +13,7 @@ class HomeComponent extends React.Component {
     return (
       <Page heading="home">
         <img src={yeomanImage} alt="Yeoman Generator" />
-        <h1>This is the home code</h1>
+        <h1>This is the home coders</h1>
         <Link to="/crm">Goto crn</Link>
       </Page>
     );
