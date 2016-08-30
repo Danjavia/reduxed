@@ -1,16 +1,11 @@
 import React from 'react';
-import GifItem from '../GifItem';
 
-const GifList = (props) => {
-  const gifItems = props.gifs.map((image) => {
-    return <GifItem key={image.id}
-                    gif={image}
-                    onGifSelect={props.onGifSelect} />
-  });
-
+const GifItem = ({gif, onGifSelect}) => {
   return (
-    <div className="gif-list">{gifItems}</div>
-  );
+    <div className="gif-item" onClick={() => onGifSelect(gif)}>
+      <img src={gif.images.downsized.url} />
+    </div>
+  )
 };
 
-export default GifList;
+export default GifItem;
