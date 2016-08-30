@@ -3,24 +3,18 @@ require('styles/App.css');
 
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
-import Page from '../Page';
-
-let yeomanImage = require('../../images/yeoman.png');
-
-class HomeComponent extends React.Component {
-  render() {
+const GiftTemp = ({gifs}) => {
+  const giftItems = gifs.map((gif) => {
     return (
-      <Page heading="home">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <h1>This is the home coders</h1>
-        <Link to="/crm">Goto crn</Link>
-      </Page>
+      <li key={gif.id}><img src={gif.url} alt=""/></li>
     );
-  }
+  });
+
+  return (
+    <ul className="list">{giftItems}</ul>
+  );
 }
 
-HomeComponent.defaultProps = {
-};
-
-export default HomeComponent;
+export default GiftTemp;
